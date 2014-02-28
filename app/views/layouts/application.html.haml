@@ -1,0 +1,20 @@
+!!! html 
+%html
+  %head
+    %title Photogenapp
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true 
+    = javascript_include_tag "application", "data-turbolinks-track" => true 
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top   
+      .container
+        = link_to "PhotogenApp", root_path, class: "navbar-brand internal"
+        %ul.nav.navbar-nav.navbar-right
+          - if user_signed_in? 
+            %li.navbar-text 
+              Signed in as
+              %strong=link_to current_user.email, current_user
+            %li= link_to  "Sign Out", destroy_user_session_path, method: :delete
+
+    .container
+      = yield

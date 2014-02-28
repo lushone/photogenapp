@@ -1,0 +1,19 @@
+.page-header
+  %h1
+    = @user.email
+    - if @user == current_user 
+      .pull-right= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-default"
+
+.row 
+  .col-md-3
+    = image_tag @user.avatar_url
+  .col-md-9
+    %h2 Photos
+
+    .row
+      - @user.photos.each do |photo|
+        .col-md-2= image_tag photo.image_url, class: "thumbnail"
+
+    = link_to "Add photo", new_photo_path, class: "btn btn-primary"
+
+

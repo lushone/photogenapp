@@ -1,0 +1,5 @@
+== README
+
+This is a simple rails app.
+
+Ruby 2.0, Rails 4

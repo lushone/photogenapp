@@ -1,0 +1,18 @@
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+.rspec
+/log
+/tmp
+/db/*.sqlite3
+/public/system
+/coverage/
+**.orig
+rerun.txt
+config/initializers/secret_token.rb
+config/secrets.yml
+## Environment normalisation:
+/.bundle
+/vendor/bundle
+/public/uploads

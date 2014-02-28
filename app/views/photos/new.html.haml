@@ -1,0 +1,15 @@
+
+.page-header
+  %h1 New Photo
+
+= form_for @photo, html: {multipart: true} do |f|
+  .form-group
+    = f.label :name 
+    = f.text_field :name, class: "form-control"
+  .form-group
+    = f.label :image 
+    = image_tag(@photo.image_url, class: "thumbnail") if @photo.image?
+    = f.file_field :image
+    = f.hidden_field :image_cache
+
+  = f.submit "Upload Photo", class: "btn btn-primary"
